@@ -5,8 +5,9 @@ import { ChevronDown, ChevronUp, MapPin } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { Separator } from "@/components/ui/separator";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function ProfileCard() {
   const [showCalendar, setShowCalendar] = useState(false);
@@ -85,10 +86,10 @@ export default function ProfileCard() {
         </div>
         {showCalendar && (
           <div className="mt-4">
-            <CalendarComponent
-              mode="single"
+      <DatePicker
               selected={date}
-              onSelect={setDate}
+              onChange={(date) => setDate(date)}
+              inline
               className="rounded-md border"
             />
           </div>
