@@ -85,12 +85,12 @@ export default function ProfileCard() {
           />
         </div>
         {showCalendar && (
-          <div className="mt-4">
+          <div className="mt-4 w-full">
       <DatePicker
               selected={date}
               onChange={(date) => setDate(date)}
               inline
-              className="rounded-md border"
+              className="rounded-md w-full border"
             />
           </div>
         )}
