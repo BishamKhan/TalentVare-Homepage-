@@ -18,6 +18,7 @@ export default function Navbar() {
             src="/assets/images/logo.png" 
             width={40}
             height={40}
+            alt="logo"
             />
           {/* <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center transform rotate-45">
