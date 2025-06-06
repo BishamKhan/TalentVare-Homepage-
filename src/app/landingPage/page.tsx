@@ -138,7 +138,7 @@ const LandingPage = () => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="mx-auto px-12 py-8">
+      <div className="mx-auto px-6 lg:px-12 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Left Sidebar - Profile Card */}
           <div className="lg:col-span-1">
@@ -171,13 +171,13 @@ const LandingPage = () => {
                 <div className="space-x-4 space-y-2">
                   {["Frontend", "Backend", "Graphic Designer"].map(
                     (tag, index) => (
-                        <Button
-                          key={index}
-                          size="sm"
-                          className="bg-transparent rounded-sm text-[#737A91] font-normal border border-[#737A91] hover:bg-transparent "
-                        >
-                          {tag}
-                        </Button>
+                      <Button
+                        key={index}
+                        size="sm"
+                        className="bg-transparent rounded-sm text-[#737A91] font-normal border border-[#737A91] hover:bg-transparent "
+                      >
+                        {tag}
+                      </Button>
                     )
                   )}
                 </div>
@@ -264,6 +264,6 @@ const LandingPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default LandingPage;

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from "@/components/ui/sheet"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -68,12 +68,6 @@ const Navbar = () => {
 
         {/* Mobile/Tablet Right Section */}
         <div className="flex lg:hidden items-center space-x-3">
-          {/* Profile Avatar - Always visible */}
-          <Avatar className="w-8 h-8">
-            <AvatarImage src="/assets/images/avatar2.jpg" />
-            <AvatarFallback className="bg-gray-200 text-gray-600 text-xs">AF</AvatarFallback>
-          </Avatar>
-
           {/* Search Section */}
           <div className="flex items-center">
             {isSearchOpen ? (
@@ -104,14 +98,16 @@ const Navbar = () => {
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="right" className="w-80">
+                    {/* title is used here to prevent the runtime error. error:`DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users. */}
+                    <SheetTitle />
                     <div className="flex flex-col space-y-4 mt-8">
-                      <div className="flex items-center space-x-3 pb-4 border-b">
+                      <div className="flex items-center space-x-3 px-4 pb-4 border-b">
                         <Avatar className="w-12 h-12">
                           <AvatarImage src="/assets/images/avatar2.jpg" />
                           <AvatarFallback className="bg-gray-200 text-gray-600">AF</AvatarFallback>
                         </Avatar>
                         <div>
-                          <p className="font-medium text-gray-900">Albert Flores</p>
+                          <p className="font-medium text-gray-900">Albert dFlores</p>
                           <p className="text-sm text-gray-500">Product Designer</p>
                         </div>
                       </div>
@@ -131,7 +127,7 @@ const Navbar = () => {
                         ))}
                       </div>
 
-                      <div className="pt-4 border-t">
+                      <div className="pt-4 px-4 border-t">
                         <Button className="w-full bg-[#0154AA] hover:bg-[#0a6acf] text-white rounded-lg">
                           Resume Builder
                         </Button>
