@@ -9,22 +9,21 @@ import { Separator } from "@/components/ui/separator";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function ProfileCard() {
+const ProfileCard = () => {
   const [showCalendar, setShowCalendar] = useState(false);
-  const [showMore, setShowMore] = useState(false);
   const [date, setDate] = useState(new Date());
 
   return (
     <>
       {/* profile */}
-      <Card className="w-full rounded-md max-w-sm overflow-hidden  border-none shadow-none ">
+      <Card className="w-full rounded-md max-w-sm py-0 pb-2 overflow-hidden  border-none shadow-none ">
         {/* Header Image with Profile Avatar */}
         <div className="relative">
           <div className="h-24 bg-gradient-to-r from-blue-400 to-purple-500">
             <img
               src="/assets/images/cover.jpg"
               alt="Header background"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover "
             />
           </div>
           <Avatar className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-16 h-16 border-4 border-white">
@@ -33,7 +32,7 @@ export default function ProfileCard() {
           </Avatar>
         </div>
 
-        <CardHeader className="text-center">
+        <CardHeader className="text-center mt-1">
           <h3 className="font-semibold text-lg text-gray-900">Albert Flores</h3>
           <p className="text-sm text-gray-600 leading-tight">
             Senior Product Designer | UI/UX Designer | Graphic Designer | Web...
@@ -45,7 +44,7 @@ export default function ProfileCard() {
       </Card>
 
       {/* visitor */}
-      <Card className="mt-3 px-4 py-2 rounded-md border-none shadow-none ">
+      <Card className="hidden lg:block mt-3 px-4 py-2 rounded-md border-none shadow-none ">
         <div>
           {/* Desktop Stats - Always visible on desktop */}
           <div className="hidden lg:block">
@@ -68,14 +67,14 @@ export default function ProfileCard() {
       </Card>
 
       {/* calendar */}
-      <Card className="mt-3 px-4 py-2 rounded-md border-none shadow-none ">
+      <Card className="hidden lg:block mt-3 px-4 py-2 rounded-md border-none shadow-none ">
         <div
           className="flex items-center justify-between cursor-pointer"
           onClick={() => setShowCalendar(!showCalendar)}
         >
           <div>
-            <p className="text-sm font-medium text-gray-700">My calendar</p>
-            <p className="text-xs text-gray-500">Upcoming Interviews</p>
+            <p className="text-sm font-semibold text-[#333333] ">My calendar</p>
+            <p className="text-xs text-[#737A91] ">Upcoming Interviews</p>
           </div>
 
           <ChevronDown
@@ -86,7 +85,7 @@ export default function ProfileCard() {
         </div>
         {showCalendar && (
           <div className="mt-4 w-full">
-      <DatePicker
+            <DatePicker
               selected={date}
               onChange={(date) => setDate(date)}
               inline
@@ -97,4 +96,6 @@ export default function ProfileCard() {
       </Card>
     </>
   );
-}
+};
+
+export default ProfileCard;

@@ -122,7 +122,7 @@ const jobsData = [
   },
 ];
 
-export default function LandingPage() {
+const LandingPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -138,7 +138,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      <div className="mx-auto px-12 py-6">
+      <div className="mx-auto px-12 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Left Sidebar - Profile Card */}
           <div className="lg:col-span-1">
@@ -151,11 +151,11 @@ export default function LandingPage() {
           <div className="lg:col-span-3">
             {/* Header */}
             <div className="mb-6">
-              <h1 className="text-xl font-bold text-gray-900 ">
+              <h1 className="text-xl font-semibold text-[#333333] ">
                 Find your Dream Job,{" "}
                 <span className="text-[#0154AA]"> Albert! </span>{" "}
               </h1>
-              <p className=" text-xs text-gray-600">
+              <p className=" text-sm font-medium text-[#585D6E] ">
                 Explore thousands of job opportunities with all the information
                 you need. Its your future
               </p>
@@ -173,6 +173,7 @@ export default function LandingPage() {
                     (tag, index) => (
                         <Button
                           key={index}
+                          size="sm"
                           className="bg-transparent rounded-sm text-[#737A91] font-normal border border-[#737A91] hover:bg-transparent "
                         >
                           {tag}
@@ -186,7 +187,7 @@ export default function LandingPage() {
             {/* Featured Jobs */}
             <div className="mb-8">
               <div className="flex items-center space-x-4 mb-4">
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-lg font-medium text-[#333333] ">
                   Featured Jobs
                 </h2>
                 <a
@@ -211,7 +212,7 @@ export default function LandingPage() {
             {/* Recommended Jobs */}
             <div className="mb-8">
               <div className="flex items-center space-x-4 mb-4">
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-lg font-medium text[#333333] ">
                   Recommended Jobs
                 </h2>
                 <a
@@ -236,7 +237,7 @@ export default function LandingPage() {
             {/* Latest Jobs */}
             <div>
               <div className="flex items-center space-x-4 mb-4">
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-lg font-medium text-[#333333] ">
                   Latest Jobs
                 </h2>
                 <a
@@ -264,3 +265,5 @@ export default function LandingPage() {
     </div>
   );
 }
+
+export default LandingPage;
